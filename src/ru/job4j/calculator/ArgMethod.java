@@ -6,9 +6,15 @@ public class ArgMethod {
         System.out.println("Hello, " + name);
     }
 
+    public static void hello(String name, int age) {
+        hello(name);
+        System.out.println("Your age is " + age + " years old");
+    }
+
     public static void main(String[] args) {
         String name = "Petr Arsentev";
         int age = 33;
         ArgMethod.hello(name);
+        ArgMethod.hello(name, age);
     }
 }

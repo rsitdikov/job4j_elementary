@@ -4,13 +4,13 @@ import org.junit.Test;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
-public class CounterTest {
+public class CounterEvenTest {
     @Test
     public void whenSumEvenNumbersFromOneToTenThenThirty() {
         int st = 1;
         int fn = 10;
         int expected = 30;
-        int sm = Counter.add(st, fn);
+        int sm = CounterEven.add(st, fn);
         assertThat(sm, is(expected));
     }
 }

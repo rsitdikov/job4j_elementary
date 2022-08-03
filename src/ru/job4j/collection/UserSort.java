@@ -11,6 +11,7 @@ public class UserSort {
             return first.getName().compareTo(second.getName());
         }
     }
+
     static class UserSortByNameReverse implements Comparator<User> {
 
         @Override
@@ -18,6 +19,7 @@ public class UserSort {
             return second.getName().compareTo(first.getName());
         }
     }
+
     static class UserSortByAge implements Comparator<User> {
 
         @Override
@@ -25,6 +27,7 @@ public class UserSort {
             return Integer.compare(first.getAge(), second.getAge());
         }
     }
+
     static class UserSortAgeReverse implements Comparator<User> {
 
         @Override

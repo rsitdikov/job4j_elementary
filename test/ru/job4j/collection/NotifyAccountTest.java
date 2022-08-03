@@ -24,6 +24,7 @@ public class NotifyAccountTest {
         );
         assertThat(NotifyAccount.sent(accounts), is(expect));
     }
+
     @Test
     public void whenDuplicateDeleted() {
         List<Account> accounts = List.of(

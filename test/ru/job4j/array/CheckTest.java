@@ -16,6 +16,7 @@ public class CheckTest {
         input = new boolean[]{false, false, false, false};
         assertThat(check.mono(input), is(true));
     }
+
     @Test
     public void whenAnOddNumberOfArrayElementsMonoCheck() {
         Check check = new Check();

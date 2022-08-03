@@ -46,6 +46,7 @@ public class User implements Comparable<User> {
     public int hashCode() {
         return Objects.hash(name, age);
     }
+
     @Override
     public int compareTo(User o) {
         int rsl = name.compareTo(o.name);

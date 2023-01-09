@@ -13,6 +13,7 @@ public class MainPolimorph {
         sportCar.steer();
         sportCar.brake();
         sportCar.refill();
+        Vehicle.getDragCoefficient();
     }
 
 }

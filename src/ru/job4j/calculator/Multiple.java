@@ -1,10 +1,12 @@
 package ru.job4j.calculator;
 
 public class Multiple {
+    private static final int MIN_NUMBER = 1;
+    private static final int MAX_NUMBER = 9;
     public static void main(String[] args) {
-        for (int first = 1; first < 10; first++) {
-            for (int second = 1; second < 10; second++) {
-                System.out.println(String.format("%d x %d = %d", first, second, first * second));
+        for (int row = MIN_NUMBER; row <= MAX_NUMBER; row++) {
+            for (int column = MIN_NUMBER; column <= MAX_NUMBER; column++) {
+                System.out.println(String.format("%d x %d = %d", row, column, row * column));
             }
             System.out.println();
         }

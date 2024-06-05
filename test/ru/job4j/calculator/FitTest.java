@@ -1,22 +1,40 @@
 package ru.job4j.calculator;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+import static org.assertj.core.api.Assertions.*;
 
-public class FitTest {
+class FitTest {
+
     @Test
-    public void manWeight() {
-        double in = 100.0;
-        double expected = 0.0;
-        double out = Fit.calculateManWeight(in);
-        Assert.assertEquals(expected, out, 0.1);
+    void whenManHeightIs100ThenWeightIs0() {
+        double height = 100.0;
+        double expectedWeight = 0.0;
+        double actualWeight = Fit.calculateManWeight(height);
+        assertThat(actualWeight).isEqualTo(expectedWeight);
     }
 
     @Test
-    public void womanWeight() {
-        double in = 110.0;
-        double expected = 0.0;
-        double out = Fit.calculateWomanWeight(in);
-        Assert.assertEquals(expected, out, 0.1);
+    void whenManHeightIs180ThenWeightIs92() {
+        double height = 180.0;
+        double expectedWeight = 92.0;
+        double actualWeight = Fit.calculateManWeight(height);
+        assertThat(actualWeight).isEqualTo(expectedWeight);
+    }
+
+    @Test
+    void whenWomanHeightIs150ThenWeightIs46() {
+        double height = 150.0;
+        double expectedWeight = 46.0;
+        double actualWeight = Fit.calculateWomanWeight(height);
+        assertThat(actualWeight).isEqualTo(expectedWeight);
+    }
+
+    @Test
+    void whenHeightIsNegativeThenThrowException() {
+        double manHeightAdjustment = 100.0;
+        double height = -10.0;
+        assertThatThrownBy(() -> Fit.calculateWeight(height, manHeightAdjustment))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessage("Height must be greater than 0");
     }
 }
